@@ -22,8 +22,8 @@ savePicture path (Picture(hor,ver,colors)) = do
     hClose handle
   where
      hWritePic h = do
-         x <- [0..hor-1]
          y <- [0..ver-1]
+         x <- [0..hor-1]
          if x == hor-1
            then [hPutStrLn h $ toStr $ colors (fromIntegral x) (fromIntegral y)]
            else [hPutStr h $ (toStr $ colors (fromIntegral x) (fromIntegral y)) ++ " "]
